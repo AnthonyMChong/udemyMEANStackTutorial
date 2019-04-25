@@ -8,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class PostCreateComponent {
 
+  onAddPost(){//styling is on is for functions that are triggered by events
+    alert('Post added!')
+
+  }
+
 }
