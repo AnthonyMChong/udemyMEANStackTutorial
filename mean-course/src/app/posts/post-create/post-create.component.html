@@ -1,7 +1,7 @@
 <h2> The Post Create Component</h2>
 <!-- The HTML <h2> tag represents a level 2 heading in an HTML document. HTML includes 6 levels of headings, which are ranked by importance. These are <h1> , <h2> , <h3> , <h4> , <h5> , and <h6> .. -->
-<textarea [value] = "newpost" rows="6"> </textarea>
-<!--bracket value uses property binding to run actual js code within the quotes-->
+<textarea  rows="6" [(ngModel)] = "enteredValue"> </textarea>
+<!--using ngModel to create a two way binding-->
 <hr>
 <button (click) = "onAddPost()"> Save Post</button>
 <!--click is a known angular component .. -->
