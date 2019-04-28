@@ -6,6 +6,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {PostCreateComponent} from './posts/post-create/post-create.component'
 
+import { MatInputModule , MatCard } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,7 +17,10 @@ import {PostCreateComponent} from './posts/post-create/post-create.component'
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    MatInputModule,
+    MatCard,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
