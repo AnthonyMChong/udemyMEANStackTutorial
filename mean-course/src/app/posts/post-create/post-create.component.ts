@@ -4,7 +4,8 @@ import { Component } from '@angular/core';
 // takes configuration via object like adding template
 @Component({
   selector: 'app-post-create',
-  templateUrl: './post-create.component.html'
+  templateUrl: './post-create.component.html',
+  styleUrls: ['./post-creat.component.css']
 })
 export class PostCreateComponent {
 

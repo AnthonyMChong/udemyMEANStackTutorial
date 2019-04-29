@@ -1,10 +1,13 @@
-
-  <!-- The HTML <h2> tag represents a level 2 heading in an HTML document. HTML includes 6 levels of headings, which are ranked by importance. These are <h1> , <h2> , <h3> , <h4> , <h5> , and <h6> .. -->
-  <textarea rows="6" [(ngModel)] = "enteredValue"> </textarea>
-  <!--using ngModel to create a two way binding-->
-
-<hr>
-<button (click) = "onAddPost()"> Save Post</button>
+<mat-card>
+  <mat-form-field>
+    <!-- The HTML <h2> tag represents a level 2 heading in an HTML document. HTML includes 6 levels of headings, which are ranked by importance. These are <h1> , <h2> , <h3> , <h4> , <h5> , and <h6> .. -->
+    <textarea matInput rows="6" [(ngModel)] = "enteredValue"> </textarea>
+    <!--using ngModel to create a two way binding-->
+  </mat-form-field>
+  <button mat-raised-button
+  color = "accent"
+  (click) = "onAddPost()"> Save Post</button>
+</mat-card>
 <!--click is a known angular component .. -->
 <!-- usign string interpolation in this paragraph... interpolation means an insertion of something of a different nature to something else-->
 <p>{{newpost}}</p>
