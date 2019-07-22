@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component , Input} from '@angular/core';
 
 // this is a decorator
 // takes configuration via object like adding template
@@ -13,5 +13,7 @@ export class PostListComponent {
   //   {title: "second Post" , content: "This is the second post"},
   //   {title: "Thrid Post" , content: "This is the Thrid post"}
   // ];
-  posts = [];
+
+  @Input() posts = [];
+  //make this storedPosts property bindable in the app.componenet (parent)
 }
