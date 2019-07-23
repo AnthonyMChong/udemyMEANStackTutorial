@@ -1,5 +1,6 @@
 import { Component , EventEmitter, Output} from '@angular/core';
 import {Post} from '../post.model';
+import {NgForm} from '@angular/forms';
 
 // this is a decorator
 // takes configuration via object like adding template
@@ -17,13 +18,16 @@ export class PostCreateComponent {
   enteredTitle = '';
   enteredContent = '';
 
-  onAddPost(){//styling is on is for functions that are triggered by events
+  onAddPost( form: NgForm ){//styling is on is for functions that are triggered by events
     // alert('Post added!')
+    if (form.invalid){
+      return;
+    }
     const post: Post = {
-      title: this.enteredTitle,
-      content: this.enteredContent
+      title: form.value.title,
+      content: form.value.content
     };
-    this.postCreated.emit(post)
+    this.postCreated.emit(post);
 
   }
 

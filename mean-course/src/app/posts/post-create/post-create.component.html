@@ -1,18 +1,17 @@
 <mat-card>
-  <mat-form-field>
-    <!-- The HTML <h2> tag represents a level 2 heading in an HTML document. HTML includes 6 levels of headings, which are ranked by importance. These are <h1> , <h2> , <h3> , <h4> , <h5> , and <h6> .. -->
-    <textarea matInput rows="text" [(ngModel)] = "enteredTitle"> </textarea>
-    <!--using ngModel to create a two way binding-->
-  </mat-form-field>
-  <mat-form-field>
-    <!-- The HTML <h2> tag represents a level 2 heading in an HTML document. HTML includes 6 levels of headings, which are ranked by importance. These are <h1> , <h2> , <h3> , <h4> , <h5> , and <h6> .. -->
-    <textarea matInput rows="6" [(ngModel)] = "enteredContent"> </textarea>
-    <!--using ngModel to create a two way binding-->
-  </mat-form-field>
-  <button mat-raised-button
-  color = "accent"
-  (click) = "onAddPost()"> Save Post</button>
+  <!-- using the submit event to run onAddPost-->
+  <form (submit)="onAddPost(postForm)" #postForm="ngForm">
+    <mat-form-field>
+      <textarea matInput rows="text" name="title" minlenth="3" #title="ngModel" ngModel required> </textarea>
+        <mat-error *ngIf="title.invalid">Please enter a post title </mat-error>
+
+      <!--using form to create a javascript representation of the data-->
+    </mat-form-field>
+    <mat-form-field>
+      <textarea matInput rows="6" name="content" #content="ngModel" ngModel required> </textarea>
+          <mat-error *ngIf="content.invalid">Please enter post content </mat-error>
+
+    </mat-form-field>
+    <button mat-raised-button color="accent" type="submit"> Save Post </button>
+  </form>
 </mat-card>
-<!--click is a known angular component .. -->
-<!-- usign string interpolation in this paragraph... interpolation means an insertion of something of a different nature to something else-->
-<p>{{newpost}}</p>
