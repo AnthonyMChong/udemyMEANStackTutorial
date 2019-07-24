@@ -1,5 +1,6 @@
 import { Component , Input} from '@angular/core';
 import {Post} from '../post.model';
+import { PostsService } from '../posts.service';
 
 // this is a decorator
 // takes configuration via object like adding template
@@ -17,4 +18,9 @@ export class PostListComponent {
 
   @Input() posts: Post[] = [];
   //make this storedPosts property bindable in the app.componenet (parent)
+
+
+  constructor(public postsService: PostsService){
+
+  }
 }

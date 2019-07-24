@@ -10,6 +10,7 @@ import { HeaderComponent } from './header/header.component';
 import { MatInputModule , MatCardModule , MatButtonModule , MatToolbarModule , MatExpansionModule} from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PostListComponent } from './posts/post-list/post-list.component';
+import { PostsService } from './posts/posts.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { PostListComponent } from './posts/post-list/post-list.component';
     MatExpansionModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [ PostsService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
